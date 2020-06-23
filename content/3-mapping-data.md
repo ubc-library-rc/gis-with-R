@@ -125,9 +125,21 @@ Shape codes
 [source](http://www.sthda.com/english/wiki/r-plot-pch-symbols-the-different-point-shapes-available-in-r)
 
 
+## Exercise
+
+- Make a map that has the city neighbourhoods 
+- Add schools, libraries and community centres to the map
+  - Use different shapes and colours for each
+- Change `shape`, `labels` and `col` in `tm_add_legend`
+  - instead of `c(18)`, you can pass a list of values to these parameters, e.g., `shape=c(18, 16, 15, 17)`
+{: .warn}
+
+
 ### Recap
 
 - `tm_shape` defines the dataset for plotting
 - `tm_polygons` draws polygon shapes based on the dataset provided
 - `tm_lines` draws lines based on the dataset provided
 - `tm_dots` draws dot shapes based on the dataset provided
+- `tm_text` adds text in the map
+- `tm_add_legend` manually add labels and text for the legend component of the map

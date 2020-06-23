@@ -28,18 +28,6 @@ They want support from the local news and, instead of anedoctal data, **they com
 
 
 
-### Learning Goals
-
-* Understand the basic commands of R and how to use RStudio environment
-
-* Learn the basic data structures available for GIS
-
-* Learn how to load, preprocess, and explore spatial data in R
-
-* Apply basic operations for creating and extending map data with R
-
-* Explore a practical problem and understand how the methodology extends to other disciplines
-
 
 
 ### Schedule
