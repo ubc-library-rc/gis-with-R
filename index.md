@@ -12,7 +12,25 @@ R is a popular programming language for data analysis specially suited for stati
 for using R in conjunction with Geographic Information Systems, e.g., [QGIS](https://www.qgis.org/en/site/).
 
 
-This workshop is designed for **beginners** who have no or little experience in R and with opportunities for hands-on experience with sample data. Join us for this workshop and start your spatial data analysis with R!
+
+
+## Goal of this workshop
+
+Our goal is to **begin** to understand and use R for spatial data analysis. You will not be an expert by the end of the class. You will probably not even feel very comfortable using R. This is okay. We want to make a start but, as with any skill, using R takes practice.
+
+
+At the end of the workshop, we expect that you can:
+
+* understand the basic commands of R and how to use RStudio environment;
+
+* know the basic data structures available for GIS;
+
+* load, preprocess, and explore spatial data in R; and
+
+* apply basic operations for creating and extending map data with R
+
+* recognize how the methodology hereby applied extend to other disciplines
+
 
 __
 

@@ -9,11 +9,24 @@ has_toc: false
 
 ## Outline
 
-### Goal of this workshop
 
-Our goal is to **begin** to understand and use R for spatial data analysis. You will not be an expert by the end of the class. You will probably not even feel very comfortable using R. This is okay. We want to make a start but, as with any skill, using R takes practice.
 
-This is your session. If you have a question or feel we are going too fast, please let the instructor know. We can decide as a group what to cover.
+### Problem Statement
+
+<img src="{{site.baseurl}}/content/fig/open-data.png"> 
+
+[source](https://opendata.vancouver.ca/pages/home/)
+
+
+Students want to write a petition asking for the construction of schools, community centres, and other recreation facilities for certain neighbourhoods. 
+They want support from the local news and, instead of anedoctal data, **they come armed with science and knowledge!!!**
+
+- What is the density of services in Vancouver's neighbourhoods? 
+- Are services concentrated in accessible regions? 
+- Does income of citizens in a neighbourhood influece service density?
+{: .warn}
+
+
 
 ### Learning Goals
 
@@ -28,8 +41,10 @@ This is your session. If you have a question or feel we are going too fast, plea
 * Explore a practical problem and understand how the methodology extends to other disciplines
 
 
+
 ### Schedule
 
+This is your session. If you have a question or feel we are going too fast, please let the instructor know. We can decide as a group what to cover.
 
 TODO
 {: .label .label-green }
@@ -40,7 +55,9 @@ TODO
 
 _Actual schedule may vary depending on group needs_
 
-<img src="{{site.baseurl}}/content/fig/xkcd-map.png"> [source](https://xkcd.com/1799/)
+<img src="{{site.baseurl}}/content/fig/xkcd-map.png"> 
+
+[source](https://xkcd.com/1799/)
 
 
 

@@ -1,54 +1,120 @@
 ---
 layout: default
-title: Concepts and tools
+title: Data Types
 parent: Outline
-nav_order: 1
+nav_order: 2
 ---
 
-## Terminology
+## Spatial Data
 
-We quote [Manuel Gimond's](https://mgimond.github.io/Spatial/introGIS.html) definitions for GIS and spatial analysis. 
+GIS often represents data in a 2 dimensional plane or using some coordinate reference system
 
+<img src="{{site.baseurl}}/content/fig/vector_vs_raster.jpg">
 
-A **Geographic Information System** is a multi-component environment used to create, manage, visualize and analyze data and its spatial counterpart. 
-{: .note}
+[source](https://mgimond.github.io/Spatial/feature-representation.html)
 
-
-**Spatial analysis** focuses on the statistical analysis of patterns and underlying processes. It's an exploratory process whereby we attempt to quantify the observed pattern then explore the processes that may have generated the pattern.
-{: .note}
-
-
-For example, Census data collects information about 
-the average income of different ethnicities, age groups, etc for every borough of a city. We also have information 
-about the location of public schools, health centres, 
-and recreation zones. Are the services equally distributed 
-across neighborhoods? Are rapid transit lines concentrated 
-in regions of lower income where people use public transit?
-Those are questions that are addressed in spatial analysis using quantitative and statistical techniques.
-
-
-## R vs Python for Spatial Analysis
-
-Every programming language has a purpose and benefit in certain situations. 
-
-Python
+Vector
 {: .label .label-yellow }
-Python is great when you need to process bulks of data, fetch data from social networks (e.g., Twitter or Facebook), etc. ArcGIS, QGIS, and GRASS GIS also incorporate Python
-as part of their tooling, thus Python can be compared to as the swiss army knife for GIS. However, having too many options might be too intimidating if you have a simple and well defined tasks.
+Vector data is simpler, it encompasses points, lines, and polygons of any shape.
+
+Raster
+{: .label .label-yellow }
+Raster data uses pixels (many of them!) to represent real-world images, e.g., a satellite picture.
 
 
-R
+<img src="{{site.baseurl}}/content/fig/sphere.png">
+
+[source](https://www.diffen.com/difference/Latitude_vs_Longitude)
+
+Coordinate Reference System
+{: .label .label-yellow }
+A spatial reference system or coordinate reference system is a coordinate-based local, regional or global system used to locate geographical entities. For example, 
+Latitude and Longitude can represent spatial data for virtually any point on earth!
+
+
+## Loading Spatial Data in R
+
+For this workshop, we will focus on **vector** data. 
+Similar operations exist for raster, we have provided multiple links under resources.
+
+R Code
 {: .label .label-green }
-R is a language for statistical computing, graphics, data science, and geospatial analysis. ESRI provides support for R in their ArcGIS suite and QGIS also supports the programming language. R is specially well suited for statistical tests, multiple regression analysis, or graphics, and, 
-as the language has a well-defined purpose, 
-it can be simpler for certain tasks.
+```R
+# load vector
+vancouver_boundaries <- st_read("local-area-boundary.shp")
+```
+
+## Inspecting a file's meta-data
 
 
-## RStudio
+R Code
+{: .label .label-green }
+```R
+st_crs(vancouver_boundaries)$proj4string
+```
 
-Is a integrated development environment that facilitates several tasks for R. We will make use of RStudio in this workshop.
 
-`File > new File > R Script`
+R Code
+{: .label .label-green }
+```R
+st_geometry_type(vancouver_boundaries)
+unique(st_geometry_type(vancouver_boundaries))
+```
 
-<img src="{{site.baseurl}}/content/fig/R_Studio.png">
+R Code
+{: .label .label-green }
+```R
+st_bbox(vancouver_boundaries)
+```
 
+
+## Converting Tabular Data to Spatial Data
+
+In certain cases, you may not have access to vector or raster files. Nonetheless, you have recorded some geo spatial feature as part of your data collection methodology. 
+
+<img src="{{site.baseurl}}/content/fig/schools.png">
+
+Provided that you have some geo spatial feature, e.g., postal codes, you can convert your data 
+accordingly.
+
+
+R Code
+{: .label .label-green }
+```R
+# Load tabular data
+tbl <- read.csv("schools.csv", header=TRUE, sep=";")
+```
+
+R Code
+{: .label .label-green }
+```R
+crs_vancouver <- st_crs(vancouver_boundaries)
+schools <- st_as_sf(tbl, coords = c("LON", "LAT"), crs = crs_vancouver) 
+```
+
+
+## Data Needed for this Workshop
+
+
+
+R Code
+{: .label .label-green }
+```R
+transit_routes <- st_read("Shapes_Trips_Routes.shp")
+schools <- st_read("schools.shp")
+libraries <- st_read("libraries.shp")
+community_centres <- st_read("community-centres.shp")
+disability_parkings <- st_read("disability-parking.shp")
+```
+
+
+
+### Recap
+
+- `st_read` reads a shape file
+- `st_crs` views coordinates of shape data
+    - Not problematic in this workshop because everything is in the same CRS
+- `st_geometry_type` views geometry of the data, e.g., polygons, lines, dots, etc.
+- `st_bbox` views boundaries of data. 
+    - Not problematic in this workshop because everything is inside Metro Vancouver
+    - More challenging when working with real data
