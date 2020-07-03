@@ -5,7 +5,40 @@ parent: Outline
 nav_order: 5
 ---
 
-## spatstat
+## Point Pattern Analysis
+
+Point pattern analysis (PPA) is the study of the spatial arrangements of points in (usually 2-dimensional) space.
+For such analysis, we have to distinguish intensity, and density.
+ [source](https://en.wikipedia.org/wiki/Point_pattern_analysis)
+
+
+
+Density
+{: .label .label-yellow }
+Density refers to point concentration in an area.
+
+
+Intensity
+{: .label .label-yellow }
+Intensity is estimated from the observed point concentration over the given area. 
+
+
+
+<img src="{{site.baseurl}}/content/fig/plot4.png">     |  <img src="{{site.baseurl}}/content/fig/plot10.png">
+:-------------------------:|:-------------------------:
+Density  |  Intensity
+
+
+
+- What is an example of high density and low intensity?
+{: .warn}
+
+
+
+
+___
+
+## Point Pattern Analysis with spatstat
 
 `spatstat` package provides several functionalities for point pattern analysis.
 However, point pattern analysis does not benefit from the multiple polygons dividing 
@@ -13,7 +46,7 @@ the neighbourhoods and we will use the city boundary instead.
 
 
 
-`spatstat` is also designed to work with points stored as `ppp` objects, so we will have to convert from `sf` to `ppp`. This requires multiple steps, such as reading the file, removing meta-data, etc. So it might be nice to make a function that will encapsulate all of these procedures for us.
+`spatstat` is also designed to work with points stored as `ppp` objects, so we will have to convert from `sf` to `ppp`. This requires multiple steps, such as reading the file, removing meta-data, etc. When multiple steps are required, it might be useful to make a function that will encapsulate all of these procedures:
 
 R Code
 {: .label .label-green }
@@ -50,10 +83,7 @@ disability_parkings_ppp <- convert2ppp("disability-parking.shp")
 R Code
 {: .label .label-green }
 ```R
-schools_ppp <- convert2ppp("schools.shp")
-libraries_ppp <- convert2ppp("libraries.shp")
-community_centres_ppp <- convert2ppp("community-centres.shp")
-disability_parkings_ppp <- convert2ppp("disability-parking.shp")
+ppp_data  <- superimpose.ppp(schools_ppp, libraries_ppp, community_centres_ppp, disability_parkings_ppp)
 ```
 
 ### Finally, we bind the city boundary to the set of points
@@ -82,13 +112,16 @@ R Code
 plot(ppp_data, main=NULL, cols=rgb(0,0,0,.2), pch=20)
 ```
 
-## Density Based Analysis
+
+___
 
 
-###  quadrat count
+## Quadrat density
 
 A study area is divided into sub-regions (aka quadrats).
 Then, the point density is computed for each quadrat by dividing the number of points in each quadrat by the quadrat’s area
+
+
 
 R Code
 {: .label .label-green }
@@ -103,7 +136,10 @@ Output
 <img src="{{site.baseurl}}/content/fig/plot4.png">
 
 
-### intensity
+## Quadrat intensity
+
+
+
 
 R Code
 {: .label .label-green }
@@ -111,15 +147,23 @@ R Code
 ppp_data.scale <- rescale(ppp_data, .01, "log10")
 Q   <- quadratcount(ppp_data.scale, nx= 6, ny=2)
 
-# Plot the density
+
 plot(intensity(Q, image=TRUE), main=NULL, las=1)  # Plot density raster
 plot(ppp_data.scale, pch=20, cex=0.6, col=rgb(0,0,0,.5), add=TRUE)  # Add points
 ```
 
-### Density
+Output
+{: .label .label-yellow }
+<img src="{{site.baseurl}}/content/fig/plot10.png">
+
+
+## Kernel Density
 
 Like the quadrat density, the kernel approach computes a localized density for subsets of the study area.
-Unlike its quadrat density counterpart, the sub-regions overlap one another providing a moving sub-region window, which is defined by a kernel.
+Unlike its quadrat density counterpart, the sub-regions overlap, which produces a smoothly curved surface over each point. 
+
+
+
 
 R Code
 {: .label .label-green }
@@ -139,13 +183,6 @@ Output
 
 ## Exercise
 
-- Use the chat to mention a dataset and how point pattern analysis could be used to ...
+- Use the chat to mention a potential dataset where point pattern analysis could be used to ...
 {: .warn}
 
-
-### Recap
-
-- `spatstat` works with `spatial` data (`ppp` and `owin`)
-- `Window` binds a polygon area to a set of points
-- `quadratcount` computes quadrat density
-- `density` computes kernel density

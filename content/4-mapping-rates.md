@@ -2,8 +2,29 @@
 layout: default
 title: Numerical data
 parent: Outline
+has_children: true
 nav_order: 4
 ---
+
+## Answer to exercise
+
+R Code
+{: .label .label-green }
+```R
+tm_shape(vancouver_boundaries) +
+  tm_polygons(col="name", border.col = "white", title="neighbourhood", palette = "Pastel1") +
+  tm_shape(schools) + tm_dots(col="red", size=.1, shape=18) +
+  tm_shape(libraries) + tm_dots(col="yellow", size=.1, shape=16) +
+  tm_shape(community_centres) + tm_dots(col="blue", size=.1, shape=15) +
+  tm_shape(disability_parkings) + tm_dots(col="black", size=.1, shape=17) +
+  tm_legend(outside=TRUE) +
+  tm_add_legend(type = "symbol", 
+                shape=c(18, 16, 15, 17), 
+                labels=c("Schools", "Libraries", "Community Centres", "Disability Parking"),
+                col=c("red", "yellow", "blue", "black")) +  
+tm_layout(main.title="City of Vancouver", main.title.position = "left")
+```
+
 
 ## Census Data
 
@@ -52,7 +73,7 @@ vancouver_boundaries$income_30k <- income_30k * 100
 ```
 
 
-## Dividing Data into Buckets
+## *1*{: .circle .circle-blue} Dividing Data into Buckets
 
 
 R Code
@@ -73,7 +94,7 @@ style: quantile
 ```
 
 
-## Plotting Income Data
+## *2*{: .circle .circle-blue} Plotting Income Data
 
 
 
@@ -93,21 +114,27 @@ Output
 <img src="{{site.baseurl}}/content/fig/plot3.png">
 
 
+choropleth maps
+{: .label .label-yellow }
+**Choropleth maps** (choro = area and pleth = value)  aggregates some attribute (e.g., income) over a defined area (e.g., neighborhoods)
 
-These are examples of **choropleth maps** (choro = area and pleth = value) where some attribute is aggregated over a defined area
-{: .note}
+___
 
 
 ### Is anything Wrong with this Map?
 
 <img src="{{site.baseurl}}/content/fig/watch.png" width="200">
 
+<br>
+<br>
+<br>
+
 <img src="{{site.baseurl}}/content/fig/colour-blind.png" width="300">
 
 [source](https://en.wikipedia.org/wiki/Color_blindness)
 
 
-### Consider colour-blind or printer-friendly palettes
+### *3*{: .circle .circle-blue} Consider colour-blind or printer-friendly palettes
 
 
 R Code
@@ -115,6 +142,8 @@ R Code
 ```R
 display.brewer.all(n = NULL, type = "all", select = NULL, colorblindFriendly = TRUE)
 ```
+
+*4*{: .circle .circle-blue} We can change the `palette` of our map accordingly 
 
 
 R Code
@@ -128,12 +157,14 @@ tm_shape(vancouver_boundaries) +
   tm_legend(outside=TRUE)
 ```
 
+___
 
 ### Recap
 
-- `tm_shape` defines the dataset for plotting
-- `tm_polygons` draws polygon shapes based on the dataset provided
-- `tm_lines` draws lines based on the dataset provided
-- `tm_dots` draws dot shapes based on the dataset provided
-- `tm_text` adds text in the map
-- `tm_add_legend` manually add labels and text for the legend component of the map
+*1*{: .circle .circle-blue} `classIntervals` divides the data into intervals
+
+*2*{: .circle .circle-blue} `tm_polygons` can use numerical data as one of its parameters, the `breaks` parameter divides the data according to the intervals we have defined
+
+*3*{: .circle .circle-blue} `display.brewer.all` displays different colours palettes
+
+*4*{: .circle .circle-blue} `palette` sets a specific palette to our plot
