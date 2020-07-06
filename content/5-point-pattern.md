@@ -38,7 +38,7 @@ Density  |  Intensity
 
 ___
 
-## Point Pattern Analysis with spatstat
+## *1*{: .circle .circle-blue} Point Pattern Analysis with spatstat
 
 `spatstat` package provides several functionalities for point pattern analysis.
 However, point pattern analysis does not benefit from the multiple polygons dividing 
@@ -73,9 +73,21 @@ disability_parkings_ppp <- convert2ppp("disability-parking.shp")
 ```
 
 
+For the city boundary, we need to convert from `SpatialLinesDataFrame` to `polygonal boundary`
+
+R Code
+{: .label .label-green }
+```R
+aux <- readShapeSpatial("city-boundary.shp") 
+aux <- st_polygonize(st_as_sf(aux))
+aux <- as(aux, "Spatial")
+city <- as.owin(aux)
+```
+[source](https://stackoverflow.com/questions/47147242/convert-spatial-lines-to-spatial-polygons)
 
 
-### It might also be interesting to merge the points
+
+### *2*{: .circle .circle-blue} It might also be interesting to merge the points
 
 
 
@@ -86,22 +98,18 @@ R Code
 ppp_data  <- superimpose.ppp(schools_ppp, libraries_ppp, community_centres_ppp, disability_parkings_ppp)
 ```
 
-### Finally, we bind the city boundary to the set of points
+### *3*{: .circle .circle-blue} Finally, we bind the city boundary to the set of points
 
 
-Because of the shape file available, we need to convert from `SpatialLinesDataFrame` to `polygonal boundary`
 
 R Code
 {: .label .label-green }
 ```R
-aux <- readShapeSpatial("city-boundary.shp") 
-aux <- st_polygonize(st_as_sf(aux))
-aux <- as(aux, "Spatial")
-city <- as.owin(aux)
-
 Window(ppp_data) <- city
 ```
-[source](https://stackoverflow.com/questions/47147242/convert-spatial-lines-to-spatial-polygons)
+
+
+
 
 
 ### We can plot the point layer to ensure everything is properly set:
@@ -116,7 +124,7 @@ plot(ppp_data, main=NULL, cols=rgb(0,0,0,.2), pch=20)
 ___
 
 
-## Quadrat density
+## *4*{: .circle .circle-blue} Quadrat density
 
 A study area is divided into sub-regions (aka quadrats).
 Then, the point density is computed for each quadrat by dividing the number of points in each quadrat by the quadrat’s area
@@ -136,7 +144,7 @@ Output
 <img src="{{site.baseurl}}/content/fig/plot4.png">
 
 
-## Quadrat intensity
+## *5*{: .circle .circle-blue} Quadrat intensity
 
 
 
@@ -157,7 +165,7 @@ Output
 <img src="{{site.baseurl}}/content/fig/plot10.png">
 
 
-## Kernel Density
+## *6*{: .circle .circle-blue} Kernel Density
 
 Like the quadrat density, the kernel approach computes a localized density for subsets of the study area.
 Unlike its quadrat density counterpart, the sub-regions overlap, which produces a smoothly curved surface over each point. 
@@ -186,3 +194,20 @@ Output
 - Use the chat to mention a potential dataset where point pattern analysis could be used to ...
 {: .warn}
 
+
+
+___
+
+### Recap
+
+*1*{: .circle .circle-blue} `as.ppp` and `as.owin` respectively convert points and polygons to the spatstat format (ppp)
+
+*2*{: .circle .circle-blue} `superimpose.ppp` merges different point variables
+
+*3*{: .circle .circle-blue} `Window` assigns a polygon area to a set of points
+
+*4*{: .circle .circle-blue} `quadratcount` counts the density of points in a given area
+
+*5*{: .circle .circle-blue} `intensity` computes the intensity of points in a given area
+
+*6*{: .circle .circle-blue} `density` computes the kernel density of a set of  points 

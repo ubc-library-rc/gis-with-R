@@ -3,6 +3,7 @@ layout: default
 title: Mapping data in R
 parent: Outline
 has_children: true
+has_toc: false
 nav_order: 3
 ---
 

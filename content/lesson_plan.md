@@ -40,6 +40,12 @@ TODO
 | | Content 
 | --- | --- 
 | 1 | [Basics](1-basics.md)
+| 2 | [Data types](2-data-types.md)
+| 3 | [Mapping data](3-mapping-data.md)
+| 4 | [Mapping rates](4-mapping-rates.md)
+| 5 | [Point pattern analysis](5-point-pattern.md)
+| 6 | [Correlation](6-correlation.md)
+| 7 | [Wrapup](../wrapup.md)
 
 _Actual schedule may vary depending on group needs_
 

@@ -36,8 +36,37 @@ __
 
 ### Pre-workshop setup 
 
-Please bring a laptop for the workshop. 
+Have your laptop with the R and RStudio installed **before** the workshop.
 
+*1*{: .circle .circle-blue} Download and install R:
 
-TODO
-{: .label .label-green }
+* Visit [R-project](https://www.r-project.org) to learn about R versions.
+
+* Download and install R from your preferred [CRAN Mirror here](https://cran.r-project.org/mirrors.html).
+
+*2*{: .circle .circle-blue} Download and install RStudio:
+
+* Visit the [RStudio](https://www.rstudio.com/products/rstudio/download/#download) web page to choose the RStudio version you want to download and install.
+
+*3*{: .circle .circle-blue} Install the required packages:
+
+* Open R studio
+
+* Copy the command below
+```
+list.of.packages <- c(
+    "dplyr", "ggplot2", "raster", "rgdal", "rasterVis", "sf", "tmap", "spatstat", 
+    "maptools", "spdep", "classInt", "RColorBrewer", "maptools"
+)
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+```
+
+<img src="{{site.baseurl}}/content/fig/packages.png">
+
+* Press `enter` and make sure to check for installation options, e.g., having to type `Y` to accept some software license
+
+*4*{: .circle .circle-blue} Take a look at this video on [Getting started with R and RStudio](https://www.youtube.com/watch?v=lVKMsaWju8w) 
+
+*5*{: .circle .circle-blue} Download the [Data](https://opendata.vancouver.ca/explore/dataset/homeless-shelter-locations/download/?format=geojson&timezone=America/Los_Angeles&lang=en){: .btn .btn-blue } required
+

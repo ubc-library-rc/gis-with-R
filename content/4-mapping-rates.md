@@ -3,27 +3,10 @@ layout: default
 title: Numerical data
 parent: Outline
 has_children: true
+has_toc: false
 nav_order: 4
 ---
 
-## Answer to exercise
-
-R Code
-{: .label .label-green }
-```R
-tm_shape(vancouver_boundaries) +
-  tm_polygons(col="name", border.col = "white", title="neighbourhood", palette = "Pastel1") +
-  tm_shape(schools) + tm_dots(col="red", size=.1, shape=18) +
-  tm_shape(libraries) + tm_dots(col="yellow", size=.1, shape=16) +
-  tm_shape(community_centres) + tm_dots(col="blue", size=.1, shape=15) +
-  tm_shape(disability_parkings) + tm_dots(col="black", size=.1, shape=17) +
-  tm_legend(outside=TRUE) +
-  tm_add_legend(type = "symbol", 
-                shape=c(18, 16, 15, 17), 
-                labels=c("Schools", "Libraries", "Community Centres", "Disability Parking"),
-                col=c("red", "yellow", "blue", "black")) +  
-tm_layout(main.title="City of Vancouver", main.title.position = "left")
-```
 
 
 ## Census Data
@@ -52,13 +35,6 @@ income_30k <- c(0.15, 0.11, 0.11, 0.18, 0.23,
 ```
 
 
-
-R Code
-{: .label .label-green }
-```R
-library(classInt)
-library(RColorBrewer)
-```
 
 
 ## Adding Census Data to our Variable
@@ -114,7 +90,7 @@ Output
 <img src="{{site.baseurl}}/content/fig/plot3.png">
 
 
-choropleth maps
+Choropleth maps
 {: .label .label-yellow }
 **Choropleth maps** (choro = area and pleth = value)  aggregates some attribute (e.g., income) over a defined area (e.g., neighborhoods)
 

@@ -96,4 +96,6 @@ library(sf)
 library(tmap)
 library(spatstat)
 library(maptools)
+library(classInt)
+library(RColorBrewer)
 ```
