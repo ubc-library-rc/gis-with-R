@@ -68,5 +68,5 @@ if(length(new.packages)) install.packages(new.packages)
 
 *4*{: .circle .circle-blue} Take a look at this video on [Getting started with R and RStudio](https://www.youtube.com/watch?v=lVKMsaWju8w) 
 
-*5*{: .circle .circle-blue} Download the [Data](https://opendata.vancouver.ca/explore/dataset/homeless-shelter-locations/download/?format=geojson&timezone=America/Los_Angeles&lang=en){: .btn .btn-blue } required
+*5*{: .circle .circle-blue} Download the data required [Download](https://github.com/ubc-library-rc/gis-with-R/raw/master/data.zip){: .btn .btn-blue } 
 

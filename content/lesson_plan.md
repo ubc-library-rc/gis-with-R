@@ -11,6 +11,7 @@ has_toc: false
 
 
 
+
 ### Problem Statement
 
 <img src="{{site.baseurl}}/content/fig/open-data.png"> 
@@ -34,18 +35,19 @@ They want support from the local news and, instead of anedoctal data, **they com
 
 This is your session. If you have a question or feel we are going too fast, please let the instructor know. We can decide as a group what to cover.
 
-TODO
-{: .label .label-green }
 
-| | Content 
-| --- | --- 
-| 1 | [Basics](1-basics.md)
-| 2 | [Data types](2-data-types.md)
-| 3 | [Mapping data](3-mapping-data.md)
-| 4 | [Mapping rates](4-mapping-rates.md)
-| 5 | [Point pattern analysis](5-point-pattern.md)
-| 6 | [Correlation](6-correlation.md)
-| 7 | [Wrapup](../wrapup.md)
+<img src="{{site.baseurl}}/content/fig/outline.png"> 
+
+Content
+{: .label .label-green }
+1. [Basics](1-basics.md)
+1. [Data types](2-data-types.md)
+1. [Mapping data](3-mapping-data.md)
+1. [Mapping rates](4-mapping-rates.md)
+1. break
+1. [Point pattern analysis](5-point-pattern.md)
+1. [Correlation](6-correlation.md)
+1. [Wrap-up](../resources.md)
 
 _Actual schedule may vary depending on group needs_
 
