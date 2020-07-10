@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Resources
+title: Wrap-up
 nav_order: 10
 ---
 

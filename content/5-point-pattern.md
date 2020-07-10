@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Point pattern analysis
-parent: Outline
-nav_order: 5
+has_children: true
+has_toc: false
+nav_order: 7
 ---
 
 ## Point Pattern Analysis

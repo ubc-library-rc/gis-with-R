@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Data Types
-parent: Outline
-nav_order: 2
+nav_order: 4
 ---
 
 ## Spatial Data

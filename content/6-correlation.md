@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Spatial correlation
-parent: Outline
-nav_order: 6
+nav_order: 8
 ---
 
 ## Income for every Neighbourhood
@@ -86,5 +85,5 @@ ___
 
 ### Recap
 
-*1*{: .circle .circle-blue} is used to evaluate the association between two or more variables. 
+*1*{: .circle .circle-blue} `cor.test` is used to evaluate the association between two or more variables. 
 
