@@ -48,7 +48,15 @@ Have your laptop with the R and RStudio installed **before** the workshop.
 
 * Visit the [RStudio](https://www.rstudio.com/products/rstudio/download/#download) web page to choose the RStudio version you want to download and install.
 
-*3*{: .circle .circle-blue} Install the required packages:
+*3*{: .circle .circle-blue} Download and install RStudio:
+
+* On Windows make sure you have the newest version of R available `R version 4.0.2`
+
+* On MacOS install it with `brew install libxml2`
+
+* On Linux follow [this tutorial](https://geocompr.github.io/post/2020/installing-r-spatial-ubuntu/)
+
+*4*{: .circle .circle-blue} Install the required packages:
 
 * Open R studio
 
@@ -66,7 +74,9 @@ if(length(new.packages)) install.packages(new.packages)
 
 * Press `enter` and make sure to check for installation options, e.g., having to type `Y` to accept some software license
 
-*4*{: .circle .circle-blue} Take a look at this video on [Getting started with R and RStudio](https://www.youtube.com/watch?v=lVKMsaWju8w) 
+    * If you encounter problems installing `tmap` on Windows, try a fresh install of the R environment.
 
-*5*{: .circle .circle-blue} Download the data required [Download](https://github.com/ubc-library-rc/gis-with-R/raw/master/data.zip){: .btn .btn-blue } 
+*5*{: .circle .circle-blue} Take a look at this video on [Getting started with R and RStudio](https://www.youtube.com/watch?v=lVKMsaWju8w) 
+
+*6*{: .circle .circle-blue} Download the data required [Download](https://github.com/ubc-library-rc/gis-with-R/raw/master/data.zip){: .btn .btn-blue } 
 

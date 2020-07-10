@@ -39,7 +39,9 @@ plt2
 R Code
 {: .label .label-green }
 ```R
-cor(duration, waiting)
+current.mode <- tmap_mode("plot")
+tmap_arrange(plt1, plt2)
+tmap_mode(current.mode)
 ```
 
 Output
@@ -54,8 +56,6 @@ Output
 R Code
 {: .label .label-green }
 ```R
-cor.test(vancouver_boundaries$income_100k, vancouver_boundaries$all_services, method="pearson")
-
 cor.test(vancouver_boundaries$income_30k, vancouver_boundaries$all_services, method="pearson")
 ```
 
