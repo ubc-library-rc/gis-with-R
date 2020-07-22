@@ -48,6 +48,8 @@ vancouver_boundaries <- st_read("local-area-boundary.shp")
 
 ### *2*{: .circle .circle-blue} Coordinate Reference System
 
+We obtain the `crs` of out data using the `st_crs` function. This function is not heavily used in this workshop albeit it is extremely important as you might have to work with data from different `crs` and you may need to convert from one `crs` to another.
+
 R Code
 {: .label .label-green }
 ```R
@@ -55,6 +57,8 @@ st_crs(vancouver_boundaries)$proj4string
 ```
 
 ### *3*{: .circle .circle-blue} Types of Geometry
+
+There are different types of geometry, e.g. lines, polygons, dots, etc. We can inspect what our data has with `st_geometry_type`
 
 R Code
 {: .label .label-green }
@@ -64,6 +68,8 @@ unique(st_geometry_type(vancouver_boundaries))
 ```
 
 ### *4*{: .circle .circle-blue} Bounding Boxes
+
+Finally, our map has certain boundaries, we inspect boundaries with `st_bbox`. Again, for this workshop everything is within the same boundaries, but merging maps might be more challenging.
 
 R Code
 {: .label .label-green }
@@ -86,7 +92,7 @@ tbl <- read.csv("schools.csv", header=TRUE, sep=";")
 ```
 
 *5*{: .circle .circle-blue} Provided that you have some geo spatial feature, e.g., postal codes, you can convert your data 
-accordingly. 
+with the `st_as_sf` function. Note that it is extremely important to provide a `crs`. 
 
 R Code
 {: .label .label-green }
@@ -98,7 +104,7 @@ schools <- st_as_sf(tbl, coords = c("LON", "LAT"), crs = crs_vancouver)
 
 ## Data Needed for this Workshop
 
-
+Let's load the data for the workshop
 
 R Code
 {: .label .label-green }

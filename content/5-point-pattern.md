@@ -91,6 +91,7 @@ city <- as.owin(aux)
 ### *2*{: .circle .circle-blue} It might also be interesting to merge the points
 
 
+`superimpose.ppp` takes any number of points for merging.
 
 
 R Code
@@ -128,7 +129,8 @@ ___
 ## *4*{: .circle .circle-blue} Quadrat density
 
 A study area is divided into sub-regions (aka quadrats).
-Then, the point density is computed for each quadrat by dividing the number of points in each quadrat by the quadrat’s area
+Then, the point density is computed for each quadrat by dividing the number of points in each quadrat by the quadrat’s area.
+spatstat provides the `quadratcount` to obtain quadrats:
 
 
 
@@ -147,7 +149,7 @@ Output
 
 ## *5*{: .circle .circle-blue} Quadrat intensity
 
-
+Given quadrats, we obtain their itensity with `intensity`
 
 
 R Code
@@ -171,6 +173,7 @@ Output
 Like the quadrat density, the kernel approach computes a localized density for subsets of the study area.
 Unlike its quadrat density counterpart, the sub-regions overlap, which produces a smoothly curved surface over each point. 
 
+spatstat provides the `density` to obtain the kernel density of a set of points:
 
 
 

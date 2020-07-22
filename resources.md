@@ -4,12 +4,6 @@ title: Wrap-up
 nav_order: 10
 ---
 
-## Feedback
-
-Please, provide us [Feedback](http://bit.ly/RCfeedbackwinter2018){: .btn .btn-blue } 
-
-
-__
 
 
 ## Resources
@@ -21,6 +15,7 @@ __
 * [Code for An Introduction to Spatial Analysis and Mapping in R 2nd edition](https://bookdown.org/lexcomber/brunsdoncomber2e/)
 * [Geocomputation with R, by Robin Lovelace, Jakub Nowosad, Jannes Muenchow](https://geocompr.robinlovelace.net/)
 * [Map coloring: the color scale styles available in the tmap package, by Jakub Nowosad](https://geocompr.github.io/post/2019/tmap-color-scales/)
+* [Ben Fry's data visualization pipeline](https://www.oreilly.com/library/view/visualizing-data/9780596514556/ch01.html)
 
 
 __

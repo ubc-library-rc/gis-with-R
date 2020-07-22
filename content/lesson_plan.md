@@ -29,11 +29,28 @@ They want support from the local news and, instead of anedoctal data, **they com
 
 
 
+### Approach
+
+
+To address this problem, we follow one or more steps from [Ben Fry's data visualization pipeline](https://www.oreilly.com/library/view/visualizing-data/9780596514556/ch01.html):
+
+1. **Acquire**
+    Obtain the data, whether from a file on a disk or a source over a network.
+1. **Parse**
+    Provide some structure for the data’s meaning, and order it into categories.
+1. **Filter**
+    Remove all but the data of interest.
+1. **Mine**
+    Apply methods from statistics or data mining as a way to discern patterns or place the data in mathematical context.
+1. **Represent**
+    Choose a basic visual model, such as a bar graph, list, or tree.
+1. **Refine**
+    Improve the basic representation to make it clearer and more visually engaging.
+1. **Interact**
+    Add methods for manipulating the data or controlling what features are visible.
+
 
 ### Schedule
-
-This is your session. If you have a question or feel we are going too fast, please let the instructor know. We can decide as a group what to cover.
-
 
 <img src="{{site.baseurl}}/content/fig/outline.png"> 
 
@@ -49,6 +66,8 @@ Content
 1. [Wrap-up](../resources.md)
 
 _Actual schedule may vary depending on group needs_
+
+This is your session. If you have a question or feel we are going too fast, please let the instructor know. We can decide as a group what to cover.
 
 <img src="{{site.baseurl}}/content/fig/xkcd-map.png"> 
 

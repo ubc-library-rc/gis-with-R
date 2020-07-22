@@ -44,6 +44,9 @@ Have your laptop with the R and RStudio installed **before** the workshop.
 
 * Download and install R from your preferred [CRAN Mirror here](https://cran.r-project.org/mirrors.html).
 
+If you already have R installed, make sure it is the R version 4.0.2
+{: .danger}
+
 *2*{: .circle .circle-blue} Download and install RStudio:
 
 * Visit the [RStudio](https://www.rstudio.com/products/rstudio/download/#download) web page to choose the RStudio version you want to download and install.
@@ -52,7 +55,7 @@ Have your laptop with the R and RStudio installed **before** the workshop.
 
 * On Windows make sure you have the newest version of R available `R version 4.0.2`
 
-* On MacOS install it with `brew install libxml2`
+* On MacOS install it with `brew install libxml2` and `brew install gdal`
 
 * On Linux follow [this tutorial](https://geocompr.github.io/post/2020/installing-r-spatial-ubuntu/)
 
@@ -75,6 +78,10 @@ if(length(new.packages)) install.packages(new.packages)
 * Press `enter` and make sure to check for installation options, e.g., having to type `Y` to accept some software license
 
     * If you encounter problems installing `tmap` on Windows, try a fresh install of the R environment.
+
+* Verify if everything was installed correctly by running `library(tmap)`
+
+    * If there is an error message, you might want to troubleshoot your installation.
 
 *5*{: .circle .circle-blue} Take a look at this video on [Getting started with R and RStudio](https://www.youtube.com/watch?v=lVKMsaWju8w) 
 

@@ -38,7 +38,9 @@ income_30k <- c(0.15, 0.11, 0.11, 0.18, 0.23,
 
 ## Adding Census Data to our Variable
 
+When we write `vancouver_boundaries$ ... ` you can replace the `...` by a field available in your dataset to check its values.
 
+You can also create a new field if it doesn't exist:
 
 R Code
 {: .label .label-green }
@@ -50,6 +52,7 @@ vancouver_boundaries$income_30k <- income_30k * 100
 
 ## *1*{: .circle .circle-blue} Dividing Data into Buckets
 
+We want to divide the income into buckets so it is easier to identify different populations. We can do that with the `classIntervals` function
 
 R Code
 {: .label .label-green }
@@ -71,6 +74,8 @@ style: quantile
 
 ## *2*{: .circle .circle-blue} Plotting Income Data
 
+Now that we have intervals and numerical data, i.e., `income_100k`, we can use that in our plot to quickly identify regions 
+in each bucket.
 
 
 R Code
