@@ -85,5 +85,5 @@ if(length(new.packages)) install.packages(new.packages)
 
 *5*{: .circle .circle-blue} Take a look at this video on [Getting started with R and RStudio](https://www.youtube.com/watch?v=lVKMsaWju8w) 
 
-*6*{: .circle .circle-blue} Download the data required [Download](https://github.com/ubc-library-rc/gis-with-R/raw/master/data.zip){: .btn .btn-blue } 
+*6*{: .circle .circle-blue} Download the data required [Download](https://github.com/ubc-library-rc/gis-with-R/raw/master/gis_with_R.zipp){: .btn .btn-blue } 
 
