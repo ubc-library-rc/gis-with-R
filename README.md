@@ -1,2 +1,2 @@
-# gis-intro-python
-Introduction to Geospatial Data Analysis with Python
+# gis-intro-r
+Introduction to Geospatial Data Analysis with R
