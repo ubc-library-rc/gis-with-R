@@ -1,12 +1,10 @@
 title: "GIS with R"
-remote_theme: ubc-library-rc/rc-workshop-template
-color_scheme: "nil"
-search_enabled: false
+remote_theme: ubc-library-rc/rc-theme
+color_scheme: rc
 aux_links:
   "UBC Library Research Commons Workshops":
     - "https://researchcommons.library.ubc.ca/workshops/"
 heading_anchors: false
-footer_content: "<a href=\"https://github.com/ubc-library-rc/gis-with-R/\">View workshop content in GitHub</a>"
 github_repo_url: "https://github.com/ubc-library-rc/gis-with-R/"
 
 # license information for workshop content
