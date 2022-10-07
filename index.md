@@ -45,7 +45,7 @@ Have your laptop with the R and RStudio installed **before** the workshop.
 * Download and install R from your preferred [CRAN Mirror here](https://cran.r-project.org/mirrors.html).
 
 If you already have R installed, make sure it is the R version 4.0.2
-{: .danger}
+{: .warn}
 
 *2*{: .circle .circle-blue} Download and install RStudio:
 
