@@ -1,4 +1,4 @@
-# gis-with-R
+# GIS with R
 Introduction to Geospatial Data Analysis with R
 
 Workshop link: https://ubc-library-rc.github.io/gis-with-R/
